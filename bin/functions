@@ -62,6 +62,9 @@ function retrieve-release-data() {
         esac
 
         curl -s -f --compressed -L "${url}" -o "${cache_file}"
+
+        rm "${cache_file}"
+        cp "$HOME/.asdf/plugins/java/data/jdk-${OS}-${ARCHITECTURE}.tsv" "${cache_file}"
     fi
 }
 
